@@ -1,8 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const Item = props => {
+const Item = (props) => {
+  const handleClick = () => {
+    props.toggleItem(props.item.id);
+  };
   return (
-    <div className={`item${props.item.purchased ? ' purchased' : ''}`}>
+    <div
+      onClick={handleClick}
+      className={`item${props.item.purchased ? " purchased" : ""}`}
+    >
       <p>{props.item.name}</p>
     </div>
   );
